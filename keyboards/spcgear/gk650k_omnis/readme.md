@@ -96,3 +96,11 @@ selects the previous or next RGB Matrix animation. On layer 2, the encoder
 uses `KC_TRNS` (`_______`) and therefore falls through to the lower active
 layer.
 
+## SignalRGB
+
+The `via` keymap pulls in the [SignalRGB community module](https://github.com/SRGBmods/QMK_Community_Module)
+(`modules/signalrgb`, a git submodule - run `git submodule update --init modules/signalrgb`
+first). It speaks the SignalRGB QMK protocol over the same raw HID interface as
+VIA, so both work at the same time. When SignalRGB takes over it switches the
+matrix to its own effect without saving it; closing SignalRGB restores the saved
+effect. SignalRGB still needs a device plugin for VID `0x3299` / PID `0x4E96`.
